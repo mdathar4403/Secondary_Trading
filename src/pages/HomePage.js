@@ -13,6 +13,7 @@ import { StepperContext } from '../contexts/StepperContext';
 
 const HomePage = () => {
   const [currentStep, setCurrentStep] = useState(1);
+  
   const [userData, setUserData] = useState('');
   const [panData, setPanData] = useState('');
   const [finalData, setFinalData] = useState([]);
@@ -67,11 +68,13 @@ const HomePage = () => {
               </StepperContext.Provider>
             </div>
           </div>
-          <StepperControls
-            handleClick={handleClick}
-            currentStep={currentStep}
-            steps={steps}
-          />
+          {currentStep !== steps.length &&
+            <StepperControls
+              handleClick={handleClick}
+              currentStep={currentStep}
+              steps={steps}
+            />
+          }
         </div>
       </div>
     </div>
