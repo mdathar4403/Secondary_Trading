@@ -8,6 +8,9 @@ import HomePage from './pages/HomePage';
 import UserDetails from './components/UserDetails/UserDetails';
 import CompanyDetails from './components/CompanyDetails/CompanyDetails';
 import StartingPage from './components/StartingPage/StartingPage';
+import Auctions from './components/Auctions/Auctions';
+import Profile from './components/Profile/Profile';
+import DashPage from './pages/DashPage';
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
           <Route path="/userDetails" element={<UserDetails />} />
           <Route path="/companyDetails" element={<CompanyDetails />} />
           <Route path="/" element={<StartingPage />} />
+          <Route path="/auctions" element={<Auctions />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/home" element={<DashPage />} />
         </Routes>
       </Router>
     </div>
