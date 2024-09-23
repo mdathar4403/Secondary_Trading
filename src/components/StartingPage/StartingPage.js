@@ -1,7 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const StartingPage = () => {
+    const [selectedOption, setSelectedOption] = useState(''); // State to track selected option
+    const navigate = useNavigate(); // Hook from react-router to navigate between pages
+
+    const handleOptionChange = (e) => {
+        setSelectedOption(e.target.value); // Set selected option based on radio input
+    };
+
+    const handleNext = () => {
+        if (selectedOption === 'individual') {
+            navigate('/userDetails'); // Navigate to user page
+        } else if (selectedOption === 'company') {
+            navigate('/companyDetails'); // Navigate to company page
+        } else {
+            alert('Please select an option');
+        }
+    };
     return (
         <div class="h-screen md:flex">
             <div
@@ -29,7 +47,9 @@ const StartingPage = () => {
                                     type="radio"
                                     name="radio1"
                                     id="radioButton1"
-                                    class="h-5 w-5"
+                                    value="individual"
+                                    onChange={handleOptionChange}
+                                    className="h-5 w-5"
                                 />
                                 <label
                                     for="radioButton1"
@@ -43,7 +63,9 @@ const StartingPage = () => {
                                     type="radio"
                                     name="radio1"
                                     id="radioButton2"
-                                    class="h-5 w-5"
+                                    value="company"
+                                    onChange={handleOptionChange}
+                                    className="h-5 w-5"
                                 />
                                 <label
                                     for="radioButton2"
@@ -56,7 +78,8 @@ const StartingPage = () => {
                     </div>
                     <div>
                         <button
-                            class=" w-64 hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
+                            onClick={handleNext}
+                            className=" w-64 hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
                         >
                             Next
                         </button>

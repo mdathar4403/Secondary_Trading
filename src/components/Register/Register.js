@@ -55,8 +55,10 @@ const Register = () => {
                             </svg>
                             <input class="pl-2 outline-none border-none" type="text" name="" id="" placeholder="Re-enter password" />
                         </div>
-                        <button type="submit" class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2">Register</button>
-                        <div class="text-sm ml-2 ">Yes i have an account? 
+                        <Link to="/dashboard">
+                            <button type="submit" class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2">Register</button>
+                        </Link>
+                        <div class="text-sm ml-2 ">Yes i have an account?
                             <Link to="/login">
                                 <span class="hover:text-blue-500 cursor-pointer"> Login</span>
                             </Link>
