@@ -9,8 +9,9 @@ const Auctions = () => {
                 <Dashboard />
             </div>
             <div className='flex-1 w-46'>
-                <TopBar pageName = "Auctions" />
+                <TopBar pageName="Auctions" />
             </div>
+            
         </div>
 
     )
